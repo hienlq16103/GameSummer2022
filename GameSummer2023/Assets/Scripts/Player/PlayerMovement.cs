@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour {
     [Header("Player attributes")]
     [SerializeField] float movementSpeed = 15f;
     [SerializeField] float jumpForce = 10f;
-    [SerializeField] float counterJumpForce = 100f;
     [SerializeField] Vector3 groundDetectHalfExtend = new Vector3(0.4f, 0.2f, 0.4f);
     [SerializeField] float coyoteTime = 0.2f;
     [SerializeField] float jumpBufferTime = 0.2f;
@@ -23,7 +22,6 @@ public class PlayerMovement : MonoBehaviour {
     class InputString {
         public static string Horizontal = "Horizontal";
         public static string Jump = "Jump";
-        public static string CounterJump = "CounterJump";
     }
 
     private void Start() {
