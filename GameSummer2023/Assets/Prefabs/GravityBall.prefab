@@ -1775,6 +1775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   linkingControl: {fileID: 0}
   grabPointCanvas: {fileID: 3738168875358265710}
+  interactionCircle: {fileID: 187586847}
 --- !u!114 &1969389555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1787,9 +1788,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7722068655fb36449735b02b725dae1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distanceToCenter: 0
+  directionToMouse: {x: 0, y: 0, z: 0}
+  screenPosition: {x: 0, y: 0, z: 0}
+  worldPosition: {x: 0, y: 0, z: 0}
+  arrowPosition: {x: 0, y: 0, z: 0}
+  toRotaion: {x: 0, y: 0, z: 0, w: 0}
+  throwingForce: 15
+  nonArrowRadius: 0.5
+  showArrowRadius: 1
+  mainCamera: {fileID: 0}
+  arrow: {fileID: 1138521559081070050}
   defaultGrabPoint: {fileID: 475132940}
   holdingMouseRadius: {fileID: 702696794}
   arrowImage: {fileID: 6996563131607030161}
+  rigidbodyComponent: {fileID: 4927012359283422407}
+  linkingControl: {fileID: 0}
 --- !u!1 &4927012359448056165
 GameObject:
   m_ObjectHideFlags: 0

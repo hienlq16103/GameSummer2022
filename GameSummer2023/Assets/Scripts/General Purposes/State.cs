@@ -6,4 +6,8 @@ public abstract class State {
     public virtual void OnEnter(GravityBallStateController stateController) { }
     public virtual void OnUpdate(GravityBallStateController stateController) { }
     public virtual void OnExit(GravityBallStateController stateController) { }
+
+    public virtual void OnEnter(FloatingPadStateController stateController) { }
+    public virtual void OnUpdate(FloatingPadStateController stateController) { }
+    public virtual void OnExit(FloatingPadStateController stateController) { }
 }

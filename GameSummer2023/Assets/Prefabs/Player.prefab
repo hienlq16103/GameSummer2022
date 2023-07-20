@@ -373,6 +373,7 @@ MonoBehaviour:
   maxLinkingRadius: 7.5
   radiusIncreasingRate: 5
   radiusDecreaseRate: 12.5
+  linkingCoolDown: 1
 --- !u!114 &1430206130
 MonoBehaviour:
   m_ObjectHideFlags: 0
