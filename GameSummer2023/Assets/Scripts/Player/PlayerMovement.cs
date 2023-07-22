@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour {
     [Header("Player attributes")]
     [SerializeField] float movementSpeed = 15f;
+    [SerializeField] float rotationSpeed = 720f;
     [SerializeField] float jumpForce = 10f;
     [SerializeField] Vector3 groundDetectHalfExtend = new Vector3(0.4f, 0.2f, 0.4f);
     [SerializeField] float coyoteTime = 0.2f;
@@ -16,8 +17,11 @@ public class PlayerMovement : MonoBehaviour {
     [SerializeField] Transform groundCheckPoint;
     [SerializeField] LayerMask groundLayer;
 
+    private Quaternion toRotation;
+    private Vector3 movementDirection;
     private float coyoteTimeCounter;
     private float jumpBufferTimeCounter;
+    private float previousHorizontalInput = 0f;
     float horizontalInput;
     class InputString {
         public static string Horizontal = "Horizontal";
@@ -29,6 +33,7 @@ public class PlayerMovement : MonoBehaviour {
     }
     private void Update() {
         ReadInput();
+        RotatePlayer();
         Jump();
     }
     private void FixedUpdate() {
@@ -43,6 +48,25 @@ public class PlayerMovement : MonoBehaviour {
             horizontalInput * movementSpeed,
             rigidbodyComponent.velocity.y,
             rigidbodyComponent.velocity.z);
+    }
+    private void RotatePlayer() {
+        if (horizontalInput == 0) {
+            return;
+        }
+        if (horizontalInput == previousHorizontalInput) {
+            return;
+        }
+        StopCoroutine(RotatingCoroutine());
+        previousHorizontalInput = horizontalInput;
+        StartCoroutine(RotatingCoroutine());
+    }
+    IEnumerator RotatingCoroutine() {
+        movementDirection = new Vector3(0, 0, horizontalInput);
+        toRotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+        while (transform.rotation != toRotation) {
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, toRotation, rotationSpeed * Time.deltaTime);
+            yield return null;
+        }
     }
     /* Jump() function description
      * Coyote time help player jump even if they leave the platform no more than 0.2 seconds

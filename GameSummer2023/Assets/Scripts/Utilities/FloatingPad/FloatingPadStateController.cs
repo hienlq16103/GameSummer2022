@@ -37,7 +37,7 @@ public class FloatingPadStateController : MonoBehaviour {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         ChangeState(readyState);
     }
-    private void Update() {
+    private void FixedUpdate() {
         if (currentState == null) {
             return;
         }

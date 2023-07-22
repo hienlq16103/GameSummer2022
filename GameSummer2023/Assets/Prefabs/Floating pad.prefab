@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d1e388559fdf4945b04a654b57ddd7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateController: {fileID: 2069931269}
+  stateController: {fileID: 714516188284383568}
 --- !u!1 &4562750817819649790
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,6 +101,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5888705903339567375}
   - component: {fileID: 134093695}
+  - component: {fileID: 134093698}
+  - component: {fileID: 714516188284383568}
+  - component: {fileID: 134093699}
   m_Layer: 6
   m_Name: All Components
   m_TagString: Untagged
@@ -140,6 +143,61 @@ MonoBehaviour:
   linkingControl: {fileID: 0}
   grabPointCanvas: {fileID: 8185896752920192246}
   interactionCircle: {fileID: 2833809518710759357}
+--- !u!65 &134093698
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4630373915600179183}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 0.5, z: 2}
+  m_Center: {x: 0, y: 0.25, z: 0}
+--- !u!114 &714516188284383568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4630373915600179183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47b1cf3d780e6d942b04038d889395e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  distanceToCenter: 0
+  directionToMouse: {x: 0, y: 0, z: 0}
+  screenPosition: {x: 0, y: 0, z: 0}
+  worldPosition: {x: 0, y: 0, z: 0}
+  arrowPosition: {x: 0, y: 0, z: 0}
+  toRotaion: {x: 0, y: 0, z: 0, w: 0}
+  playerTransform: {fileID: 0}
+  movementSpeed: 7
+  nonArrowRadius: 0.5
+  showArrowRadius: 1
+  mainCamera: {fileID: 0}
+  arrow: {fileID: 8576738607626796023}
+  defaultGrabPoint: {fileID: 388043477700386752}
+  holdingMouseRadius: {fileID: 9052484173537522833}
+  arrowImage: {fileID: 5828468937720932574}
+  leftPoint: {fileID: 3820049688625556312}
+  rightPoint: {fileID: 7540099158659347099}
+  linkingControl: {fileID: 0}
+--- !u!114 &134093699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4630373915600179183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18f89f7a15d9a154da2bd8bfb00e6db4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4940709675011491566
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +474,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5752231128981519282}
-  - component: {fileID: 2069931269}
   m_Layer: 6
   m_Name: Floating pad
   m_TagString: Untagged
@@ -440,34 +497,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2069931269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5752231128981519283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47b1cf3d780e6d942b04038d889395e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  distanceToCenter: 0
-  directionToMouse: {x: 0, y: 0, z: 0}
-  screenPosition: {x: 0, y: 0, z: 0}
-  worldPosition: {x: 0, y: 0, z: 0}
-  arrowPosition: {x: 0, y: 0, z: 0}
-  toRotaion: {x: 0, y: 0, z: 0, w: 0}
-  movementSpeed: 10
-  nonArrowRadius: 0.5
-  showArrowRadius: 1
-  mainCamera: {fileID: 0}
-  arrow: {fileID: 8576738607626796023}
-  defaultGrabPoint: {fileID: 388043477700386752}
-  holdingMouseRadius: {fileID: 9052484173537522833}
-  arrowImage: {fileID: 5828468937720932574}
-  leftPoint: {fileID: 3820049688625556312}
-  rightPoint: {fileID: 7540099158659347099}
 --- !u!1 &5752231129473958260
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,7 +817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dda83991e158c9f4a8ba1c61905164c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateController: {fileID: 2069931269}
+  stateController: {fileID: 2069931269, guid: f1f859450e64eeb41a2fb7238bbf5f0f, type: 3}
 --- !u!1 &8576738607626796023
 GameObject:
   m_ObjectHideFlags: 0
