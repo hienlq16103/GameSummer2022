@@ -29,7 +29,6 @@ public class FloatingPadStateController : MonoBehaviour {
     public Image arrowImage;
     public Transform leftPoint;
     public Transform rightPoint;
-    public LinkingControl linkingControl;
 
     State currentState;
 

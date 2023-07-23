@@ -7,11 +7,6 @@ public class FloatingPadDirectioningState : State {
         stateController.holdingMouseRadius.enabled = true;
     }
     public override void OnUpdate(FloatingPadStateController stateController) {
-        if (Vector3.Distance(stateController.transform.position, stateController.playerTransform.position)
-            > stateController.linkingControl.CurrentLinkingRadius()) {
-            stateController.ChangeState(stateController.readyState);
-            return;
-        }
         stateController.screenPosition = Input.mousePosition;
         Ray cameraToMouseRay = stateController.mainCamera.ScreenPointToRay(stateController.screenPosition);
         if (stateController.mouseInteractionPlane.Raycast(cameraToMouseRay, out float distanceToPlane)) {

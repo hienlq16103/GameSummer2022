@@ -8,4 +8,7 @@ public class FloatingPadSetDefaultState : MonoBehaviour {
     private void OnEnable() {
         stateController.ChangeState(stateController.readyState);
     }
+    private void OnDisable() {
+        stateController.ChangeState(stateController.readyState);
+    }
 }
