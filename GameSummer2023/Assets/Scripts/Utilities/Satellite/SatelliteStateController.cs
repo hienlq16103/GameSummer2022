@@ -20,6 +20,9 @@ public class SatelliteStateController : MonoBehaviour {
     public SatelliteSetDefaultState setDefaultState;
     public GameObject interactionCircle;
     public PlayerStatus playerStatus;
+    public AudioSource audioSource;
+    public AudioClip fixingAudio;
+    public AudioClip connectedAudio;
 
     State currentState;
 
@@ -47,6 +50,7 @@ public class SatelliteStateController : MonoBehaviour {
         grabPointMechanic.enabled = false;
         setDefaultState.enabled = false;
         interactionCircle.SetActive(false);
+        audioSource.PlayOneShot(connectedAudio);
         playerStatus.IncreaseAchievedObjective();
     }
 }

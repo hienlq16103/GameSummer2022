@@ -13,12 +13,14 @@ public class TurretAggro : MonoBehaviour {
     [SerializeField] Transform barrelEnd;
     [SerializeField] GameObject bullet;
     private Transform playerTransform;
+    private AudioSource audioSource;
 
     private Vector3 directionToTarget;
     private Quaternion toRotation;
 
     private void Awake() {
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        audioSource = GetComponent<AudioSource>();
     }
     private void Start() {
         StartCoroutine(ShootingCoroutine());
@@ -43,8 +45,8 @@ public class TurretAggro : MonoBehaviour {
     }
     private IEnumerator ShootingCoroutine() {
         while (true) {
-            yield return new WaitForSeconds(shootCoolDown);
             ShootLaser();
+            yield return new WaitForSeconds(shootCoolDown);
         }
     }
     private void ShootLaser() {
@@ -54,6 +56,7 @@ public class TurretAggro : MonoBehaviour {
         if (turretBarrel.rotation != toRotation) { 
             return;
         }
+        audioSource.Play();
         Instantiate(bullet, barrelEnd.position, barrelEnd.rotation);
     }
 }

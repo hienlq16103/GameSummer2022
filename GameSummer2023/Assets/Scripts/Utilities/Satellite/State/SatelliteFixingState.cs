@@ -7,6 +7,7 @@ public class SatelliteFixingState : State {
         stateController.process.SetActive(true);
         stateController.slider.SetMaxValue(stateController.fixingTime);
         stateController.currentFixingTime = 0;
+        stateController.audioSource.loop = true;
     }
     public override void OnUpdate(SatelliteStateController stateController) {
         if (stateController.currentFixingTime >= stateController.fixingTime) {
@@ -15,8 +16,14 @@ public class SatelliteFixingState : State {
         }
         stateController.currentFixingTime += Time.deltaTime;
         stateController.slider.SetValue(stateController.currentFixingTime);
+        if (stateController.audioSource.isPlaying) {
+            return;
+        }
+        stateController.audioSource.PlayOneShot(stateController.fixingAudio);
     }
     public override void OnExit(SatelliteStateController stateController) {
         stateController.process.SetActive(false);
+        stateController.audioSource.loop = false;
+        stateController.audioSource.Stop();
     }
 }
