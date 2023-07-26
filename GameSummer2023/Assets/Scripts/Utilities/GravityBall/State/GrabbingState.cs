@@ -33,7 +33,7 @@ public class GrabbingState : State {
                     AddForce(stateController.throwingForce * stateController.directionToMouse,
                     ForceMode.VelocityChange);
                 stateController.linkingControl.ResetCurrentLinkingRadius();
-                stateController.ChangeState(stateController.readyState);
+                stateController.ChangeState(stateController.flyingState);
             }
         } else {
             stateController.arrowImage.enabled = false;

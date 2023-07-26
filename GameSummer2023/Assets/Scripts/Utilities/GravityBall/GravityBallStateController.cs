@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class GravityBallStateController : MonoBehaviour {
     public ReadyState readyState = new ReadyState();
     public GrabbingState grabbingState = new GrabbingState();
+    public FlyingState flyingState = new FlyingState();
 
     [HideInInspector] public float distanceToCenter;
     [HideInInspector] public Vector3 directionToMouse;
@@ -14,10 +15,12 @@ public class GravityBallStateController : MonoBehaviour {
     [HideInInspector] public Vector3 arrowPosition;
     [HideInInspector] public Quaternion toRotaion;
     [HideInInspector] public Plane mouseInteractionPlane = new Plane(Vector3.forward, 0f);
+    [HideInInspector] public float flyingTimeCounter = 0f;
 
     public float throwingForce = 10f;
     public float nonArrowRadius = 0.5f;
     public float showArrowRadius = 3f;
+    public float flyingTime = 1.5f;
 
     public Camera mainCamera;
     public GameObject arrow;
@@ -27,7 +30,7 @@ public class GravityBallStateController : MonoBehaviour {
     public Rigidbody rigidbodyComponent;
     public LinkingControl linkingControl;
 
-    State currentState;
+    [HideInInspector] public State currentState;
 
     private void Start() {
         ChangeState(readyState);

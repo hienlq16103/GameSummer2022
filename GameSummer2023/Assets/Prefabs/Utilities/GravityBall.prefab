@@ -1542,7 +1542,7 @@ GameObject:
   - component: {fileID: 1153035396089396223}
   m_Layer: 6
   m_Name: GravityBall
-  m_TagString: Untagged
+  m_TagString: GravityBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1613,9 +1613,11 @@ MonoBehaviour:
   worldPosition: {x: 0, y: 0, z: 0}
   arrowPosition: {x: 0, y: 0, z: 0}
   toRotaion: {x: 0, y: 0, z: 0, w: 0}
+  flyingTimeCounter: 0
   throwingForce: 15
   nonArrowRadius: 0.5
   showArrowRadius: 1
+  flyingTime: 1.5
   mainCamera: {fileID: 0}
   arrow: {fileID: 1138521559081070050}
   defaultGrabPoint: {fileID: 475132940}

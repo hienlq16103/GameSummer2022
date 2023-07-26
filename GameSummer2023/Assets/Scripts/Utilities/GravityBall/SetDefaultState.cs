@@ -9,6 +9,9 @@ public class SetDefaultState : MonoBehaviour {
         stateController.ChangeState(stateController.readyState);
     }
     private void OnDisable() {
+        if (stateController.currentState == stateController.flyingState) {
+            return;
+        }
         stateController.ChangeState(stateController.readyState);
     }
 }

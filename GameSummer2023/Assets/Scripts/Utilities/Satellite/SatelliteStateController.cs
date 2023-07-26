@@ -19,6 +19,7 @@ public class SatelliteStateController : MonoBehaviour {
     public GrabPointMechanic grabPointMechanic;
     public SatelliteSetDefaultState setDefaultState;
     public GameObject interactionCircle;
+    public PlayerStatus playerStatus;
 
     State currentState;
 
@@ -46,5 +47,6 @@ public class SatelliteStateController : MonoBehaviour {
         grabPointMechanic.enabled = false;
         setDefaultState.enabled = false;
         interactionCircle.SetActive(false);
+        playerStatus.IncreaseAchievedObjective();
     }
 }
