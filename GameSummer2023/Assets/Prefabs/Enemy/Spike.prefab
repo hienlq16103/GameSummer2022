@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   impactDamage: 100
-  stayingDamage: 0
+  stayingDamage: 100
 --- !u!1 &8678960240163117681
 GameObject:
   m_ObjectHideFlags: 0
@@ -71,7 +71,6 @@ GameObject:
   - component: {fileID: 303092688346126724}
   - component: {fileID: 4649421321854300349}
   - component: {fileID: 6791348254857116347}
-  - component: {fileID: 345741719082422078}
   m_Layer: 8
   m_Name: Spike
   m_TagString: Untagged
@@ -143,17 +142,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &345741719082422078
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8678960240163117681}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 525853990749090806, guid: 9ef181b749f9f3a46842f5fb87a28bf3, type: 3}

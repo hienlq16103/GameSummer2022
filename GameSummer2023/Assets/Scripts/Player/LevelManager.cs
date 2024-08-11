@@ -26,6 +26,9 @@ public class LevelManager : MonoBehaviour {
         if (Input.GetKey(KeyCode.R)) {
             ReloadLevel();
         }
+        if (Input.GetKey(KeyCode.Escape)) {
+            SceneManager.LoadScene(0);
+        }
     }
 
     public bool IsTransitioning() {
@@ -33,7 +36,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     private void CheckPlayerStatus() {
-        if (playerStatus.CurrentHealthPoint() == 0) {
+        if (playerStatus.CurrentHealthPoint() <= 0) {
             isTransitioning = true;
             Instantiate(explosionParticle, player.transform.position, player.transform.rotation);
             player.SetActive(false);
